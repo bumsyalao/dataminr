@@ -1,7 +1,6 @@
-import express, { Application, Router } from "express";
+import express from "express";
 import bodyParser from "body-parser";
-import todosRouter from "./routers/TodosRouter";
-import pool from "./dbconfig/dbconnector";
+import tasklistRouter from "./routers/tasklistRouter";
 
 class Server {
   private app;
@@ -10,7 +9,6 @@ class Server {
     this.app = express();
     this.config();
     this.routerConfig();
-    this.dbConnect();
   }
 
   private config() {
@@ -18,15 +16,19 @@ class Server {
     this.app.use(bodyParser.json({ limit: "1mb" })); // 100kb default
   }
 
-  private dbConnect() {
-    pool.connect(function (err, client, done) {
-      if (err) throw new Error(err);
-      console.log("Connected");
-    });
-  }
 
   private routerConfig() {
-    this.app.use("/todos", todosRouter);
+    this.app.get("/tasklist", tasklistRouter);
+    this.app.post("/tasklist", tasklistRouter);
+
+    this.app.get(
+      "/",
+      async (req, res): Promise<any> => {
+        res.status(200).send({
+          message: "Task APIS!",
+        });
+      }
+    );
   }
 
   public start = (port: number) => {
@@ -41,3 +43,4 @@ class Server {
 }
 
 export default Server;
+
