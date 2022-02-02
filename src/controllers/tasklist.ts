@@ -103,3 +103,16 @@ export const removeTaskAction = async (req: Request, res: Response): Promise<any
     });
 }
 
+//get Tasks in Tasklist
+export const getTasklistGroupAction = (req: Request, res: Response): any => {
+    const { id } = req.params;
+
+    pool.query('SELECT task_id, tasklist_id FROM tasklist_group INNER JOIN task ON tasklist_group.task_id = task.id WHERE tasklist_group.tasklist_id = $1', [id], (error, result) => {
+        if (error) { throw error; }
+
+        res.status(200).json(result.rows)
+
+    });
+}
+
+

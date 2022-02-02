@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getTasklistAction, createTasklistAction, updateTasklistAction, addTaskAction, removeTaskAction } from '../controllers/tasklist';
+import { getTasklistAction, createTasklistAction, updateTasklistAction, addTaskAction, removeTaskAction, getTasklistGroupAction } from '../controllers/tasklist';
 
 const router = Router();
 
@@ -11,7 +11,8 @@ router.put('/tasklist/:id', updateTasklistAction);
 router.post('/tasklist/:tasklistId/task/:taskId', addTaskAction);
 router.delete('/tasklist/:tasklistId/task/:taskId', removeTaskAction)
 
-// router.delete
-// router.put
+//get task in tasklist
+router.get('/tasklist/:id', getTasklistGroupAction)
+
 
 export default router;
