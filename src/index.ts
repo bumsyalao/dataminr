@@ -23,13 +23,14 @@ class Server {
     this.app.get("/tasklist", tasklistRouter);
     this.app.post("/tasklist", tasklistRouter);
     this.app.put("/tasklist/:id", tasklistRouter);
+    this.app.post('/tasklist/:tasklistId/task/:taskId', tasklistRouter);
+    this.app.delete('/tasklist/:tasklistId/task/:taskId', tasklistRouter);
 
 
     //task endpoint
     this.app.get("/task", taskRouter);
     this.app.post("/task", taskRouter);
     this.app.put("/task/:id", taskRouter);
-
 
     this.app.get(
       "/",

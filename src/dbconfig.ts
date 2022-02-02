@@ -1,18 +1,16 @@
 /* tslint:disable */
 import { Pool } from 'pg';
 require('make-runnable');
+require('dotenv').config();
 
 
-const config = {
-  user: 'bunmialao', //this is the db user credential
-  database: 'taskdb',
-  password: 'bumskid123',
-  port: 5432,
-  max: 10, // max number of clients in the pool
-  idleTimeoutMillis: 30000,
-};
+const DBURL = process.env.dbconfig;
 
-export const pool = new Pool(config);
+export const pool = new Pool({
+  max: 20,
+  connectionString: DBURL,
+  idleTimeoutMillis: 30000
+});
 
 
 pool.connect(function (err, client, done) {
