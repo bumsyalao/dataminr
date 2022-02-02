@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
-import tasklistRouter from "./routers/tasklistRouter";
-
+import tasklistRouter from "./routes/tasklistRoutes";
+import taskRouter from "./routes/taskRoutes";
 class Server {
   private app;
 
@@ -18,8 +18,18 @@ class Server {
 
 
   private routerConfig() {
+
+    //task list endpoint
     this.app.get("/tasklist", tasklistRouter);
     this.app.post("/tasklist", tasklistRouter);
+    this.app.put("/tasklist/:id", tasklistRouter);
+
+
+    //task endpoint
+    this.app.get("/task", taskRouter);
+    this.app.post("/task", taskRouter);
+    this.app.put("/task/:id", taskRouter);
+
 
     this.app.get(
       "/",
