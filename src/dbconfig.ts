@@ -1,10 +1,18 @@
-import { Pool } from "pg";
+/* tslint:disable */
+import { Pool } from 'pg';
+require('make-runnable');
 
-export const pool = new Pool({
-  max: 20,
+
+const config = {
+  user: 'bunmialao', //this is the db user credential
+  database: 'taskdb',
+  password: 'bumskid123',
+  port: 5432,
+  max: 10, // max number of clients in the pool
   idleTimeoutMillis: 30000,
-});
+};
 
+export const pool = new Pool(config);
 
 
 pool.connect(function (err, client, done) {
@@ -12,7 +20,8 @@ pool.connect(function (err, client, done) {
   console.log("Connected");
 });
 
-const createTables = () => {
+
+export const createTables = () => {
   const task = `CREATE TABLE IF NOT EXISTS
       task(
         id SERIAL PRIMARY KEY,
@@ -22,7 +31,7 @@ const createTables = () => {
       )`;
   pool.query(task)
     .then((res) => {
-      console.log(res);
+      console.log("Created task succesfully", res);
       pool.end();
     })
     .catch((err) => {
@@ -37,9 +46,30 @@ const createTables = () => {
       created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     )`;
-  pool.query(task)
+  pool.query(tasklist)
     .then((res) => {
-      console.log(res);
+      console.log("Created task list succesfully", res);
+      pool.end();
+    })
+    .catch((err) => {
+      console.log(err);
+      pool.end();
+    });
+
+  const taskgroup = `CREATE TABLE IF NOT EXISTS
+    taskgroup(
+      tasklist_id INT,
+      task_id INT,
+      updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY(taskgroup_id),
+      CONSTRAINT (taskgroup_tasklist_id, taskgroup_task_id)
+        FOREIGN KEY(tasklist_id, task_id) 
+	        REFERENCES customers(task_id, tasklist_id)
+	        ON DELETE CASCADE
+    )`;
+  pool.query(taskgroup)
+    .then((res) => {
+      console.log("Created task group succesfully", res);
       pool.end();
     })
     .catch((err) => {
@@ -47,3 +77,10 @@ const createTables = () => {
       pool.end();
     });
 };
+
+pool.on('remove', () => {
+  console.log('client removed');
+  process.exit(0);
+});
+
+
