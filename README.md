@@ -101,7 +101,6 @@
 - **Get Tasks in Tasklist**
 
     Request:
-
     ```curl --location --request GET "http://localhost:4000/tasklist/1"```
     
     Response:
