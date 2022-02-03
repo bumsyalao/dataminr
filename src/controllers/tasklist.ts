@@ -41,7 +41,7 @@ export const updateTasklistAction = (req: Request, res: Response): any => {
             if (error) {
                 throw error
             }
-            res.status(200).send(`User modified with ID: ${id}`)
+            res.status(200).send(`Tasklist modified with ID: ${id}`)
         }
     )
 }

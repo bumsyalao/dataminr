@@ -37,7 +37,7 @@ export const updateTaskAction = (req: Request, res: Response): any => {
             if (error) {
                 throw error
             }
-            res.status(200).send(`User modified with ID: ${id}`)
+            res.status(200).send(`Task modified with ID: ${id}`)
         }
     )
 }
