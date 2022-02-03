@@ -165,6 +165,6 @@ This application was developed using NodeJs with express for routing. Postgres w
 - Postgres (https://www.postgresql.org/)
 - Docker (https://www.docker.com/)
 
-### Author 👩🏽‍💻
+## Author 👩🏽‍💻
 Bunmi Alao
 
