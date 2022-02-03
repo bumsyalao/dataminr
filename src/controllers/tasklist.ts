@@ -47,7 +47,6 @@ export const updateTasklistAction = (req: Request, res: Response): any => {
 }
 
 
-// Select task.id task.title from board_task inner join task on board_task.task_id = task.id where board_task.board_id=121212 (board id)
 
 //Add task to task list.
 
@@ -57,7 +56,6 @@ export const addTaskAction = async (req: Request, res: Response): Promise<any> =
 
     //check if task and tasklist is already is task group
     //find task list find task and update tasklist_group
-    //check if task already exist in task tasklist_group
 
     pool.query('SELECT * FROM tasklist_group WHERE tasklist_id = $1 AND task_id = $2 ', [tasklistId, taskId], (error, tasklistGroup) => {
         if (error) { throw error; }
