@@ -21,7 +21,7 @@ export const createTaskAction = (req: Request, res: Response): any => {
     pool.query('INSERT INTO task (title, updated_at) VALUES ($1, $2)', [title, updatedAt], (err, result) => {
         if (err) { throw err; }
 
-        res.status(201).send(`Track created succesfully ID: ${result.rows[0]}`)
+        res.status(201).send(`Task created succesfully ID: ${result.rows[0]}`)
     });
 }
 
