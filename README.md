@@ -106,14 +106,14 @@
 
     ```
     [
-    {
-        "task_id": 2,
-        "tasklist_id": 1
-    },
-    {
-        "task_id": 3,
-        "tasklist_id": 1
-    }
+        {
+            "task_id": 2,
+            "tasklist_id": 1
+        },
+        {
+            "task_id": 3,
+            "tasklist_id": 1
+        }
     ]
     ```
 
