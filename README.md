@@ -168,7 +168,3 @@ This application was developed using NodeJs with express for routing. Postgres w
 ### Author 👩🏽‍💻
 Bunmi Alao
 
-## License & Copyright ✨
-MIT © [Olubunmi Alao](https://github.com/bumsyalao)
-
-Licensed under the [MIT License](LICENSE)
