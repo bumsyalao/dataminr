@@ -127,6 +127,7 @@
     Task 7 succesfully added to tasklist 1
     ```
 - **Remove task from task list**
+
     Request: ```curl --location --request DELETE "http://localhost:4000/tasklist/1/task/7"```
 
     Response:
