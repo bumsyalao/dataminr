@@ -165,9 +165,10 @@ This application was developed using NodeJs with express for routing. Postgres w
 - Postgres (https://www.postgresql.org/)
 - Docker (https://www.docker.com/)
 
-### Author 
-Olubunmi Alao
-## License & Copyright
+### Author 👩🏽‍💻
+Bunmi Alao
+
+## License & Copyright ✨
 MIT © [Olubunmi Alao](https://github.com/bumsyalao)
 
 Licensed under the [MIT License](LICENSE)
