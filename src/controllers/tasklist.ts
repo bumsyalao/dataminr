@@ -4,18 +4,12 @@ import { Request, Response } from "express";
 
 
 export const getTasklistAction = async (req: Request, res: Response): Promise<void> => {
-    const client = await pool.connect();
-    const sql = "SELECT * FROM tasklist";
-
-    client.query(sql, (err, result) => {
+    pool.query('SELECT * FROM tasklist', (err, result) => {
         if (err) {
             throw err;
         }
         res.status(200).json(result.rows)
     })
-
-    client.release();
-
 };
 
 export const createTasklistAction = (req: Request, res: Response): any => {

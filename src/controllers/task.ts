@@ -4,9 +4,7 @@ import { Request, Response } from "express";
 
 
 export const getTaskAction = async (req: Request, res: Response): Promise<void> => {
-    const sql = "SELECT * FROM task";
-
-    pool.query(sql, (err, result) => {
+    pool.query('SELECT * FROM task', (err, result) => {
         if (err) {
             throw err;
         }
