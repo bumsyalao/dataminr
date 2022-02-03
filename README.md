@@ -1,9 +1,10 @@
 # Dataminr Backend task
 
-### Key Application Features
-[Postman Documentation](https://web.postman.co/collections/5050161-c3de30ec-a986-5641-5287-5fb034f633b6?workspace=2adbc62a-f9af-401c-8a56-7c77fd3eceed#d3ea7b56-43fa-53e9-8d78-4d13a501501f)
-- **Create a task list**
+### Key Application Features 🚀
 
+[Postman Documentation](https://web.postman.co/collections/5050161-c3de30ec-a986-5641-5287-5fb034f633b6?workspace=2adbc62a-f9af-401c-8a56-7c77fd3eceed#d3ea7b56-43fa-53e9-8d78-4d13a501501f)
+
+- **Create a task list**
     Request: ```curl --location --request POST "http://localhost:4000/tasklist" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=tasklist%20033"```
@@ -137,12 +138,11 @@
     ```
 
 
-### Development
-
+### Development 🛠
 This application was developed using NodeJs with express for routing. Postgres was used for persisting data.
 
 
-### Installation
+### Installation 📲
 
 - Clone the project repository.
 - Run git clone``` git clone https://github.com/bumsyalao/dataminr.git ```
@@ -157,7 +157,7 @@ This application was developed using NodeJs with express for routing. Postgres w
 
 
 
-### Technologies Used
+### Technologies Used ⚙️
 
 - JavaScript (ES6) (http://es6-features.org/)
 - Node.js (https://nodejs.org/en/)
@@ -165,7 +165,7 @@ This application was developed using NodeJs with express for routing. Postgres w
 - Postgres (https://www.postgresql.org/)
 - Docker (https://www.docker.com/)
 
-### Author
+### Author 
 Olubunmi Alao
 ## License & Copyright
 MIT © [Olubunmi Alao](https://github.com/bumsyalao)
