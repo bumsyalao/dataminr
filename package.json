@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "tsc && node dist/src/app.js",
     "create:db": "node ./src/dbconfig.ts createTables",
-    "test": "NODE_ENV=test &&  mocha -r ts-node/register  \"test/app.test.ts\" "
+    "test": "NODE_ENV=test &&  mocha -r ts-node/register  \"src/test/app.test.ts\" "
   },
   "author": "",
   "license": "ISC",

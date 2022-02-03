@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import supertest from 'supertest';
-import app from '../src/app';
-import { pool } from '../src/dbconfig';
+import app from '../app';
+import { pool } from '../dbconfig';
 
 const api = supertest(app);
 
