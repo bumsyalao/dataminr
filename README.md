@@ -20,13 +20,15 @@ This application was developed using NodeJs with express for routing. Postgres w
 ### Installation
 
 - Clone the project repository.
-- Run git clone
-
-``` git clone https://github.com/bumsyalao/dataminr.git ```
-
-- Run ``` npm install ``` to install the dependencies in the package.json file.
-- Create Postgresql database and run DDL scripts (https://www.postgresql.org/)
+- Run git clone``` git clone https://github.com/bumsyalao/dataminr.git ```
+- Run ``` yarn install ``` to install the dependencies in the package.json file.
 - Update .env with envexample
+- Create Postgresql database and run DDL scripts (https://www.postgresql.org/)
+- Build docker container, on project root run ``` docker-compose up --build -d  ``` 
+- ``` docker logs task-app ```
+- Start app ```yarn start app ```
+- Run test ```yarn test```
+
 
 
 
@@ -36,17 +38,7 @@ This application was developed using NodeJs with express for routing. Postgres w
 - Node.js (https://nodejs.org/en/)
 - Express (https://www.npmjs.com/package/express-api)
 - Postgres (https://www.postgresql.org/)
-
-### Limitations
-+  
-+ 
-
-
-### Later To-Do
-+ 
-+ 
-+ 
-
+- Docker (https://www.docker.com/)
 
 ### Author
 Olubunmi Alao
