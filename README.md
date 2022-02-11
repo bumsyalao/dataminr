@@ -1,4 +1,4 @@
-# Dataminr Backend task
+#  Backend task
 
 ### Key Application Features 🚀
 
